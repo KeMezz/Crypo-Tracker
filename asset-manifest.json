@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/KeMezz/Crypo-Tracker/static/js/main.84e65bac.chunk.js",
-    "main.js.map": "/KeMezz/Crypo-Tracker/static/js/main.84e65bac.chunk.js.map",
-    "runtime-main.js": "/KeMezz/Crypo-Tracker/static/js/runtime-main.a9167df0.js",
-    "runtime-main.js.map": "/KeMezz/Crypo-Tracker/static/js/runtime-main.a9167df0.js.map",
-    "static/js/2.7307ff05.chunk.js": "/KeMezz/Crypo-Tracker/static/js/2.7307ff05.chunk.js",
-    "static/js/2.7307ff05.chunk.js.map": "/KeMezz/Crypo-Tracker/static/js/2.7307ff05.chunk.js.map",
-    "index.html": "/KeMezz/Crypo-Tracker/index.html",
-    "static/js/2.7307ff05.chunk.js.LICENSE.txt": "/KeMezz/Crypo-Tracker/static/js/2.7307ff05.chunk.js.LICENSE.txt"
+    "main.js": "/Crypo-Tracker/static/js/main.e2af74f2.chunk.js",
+    "main.js.map": "/Crypo-Tracker/static/js/main.e2af74f2.chunk.js.map",
+    "runtime-main.js": "/Crypo-Tracker/static/js/runtime-main.b407ae2c.js",
+    "runtime-main.js.map": "/Crypo-Tracker/static/js/runtime-main.b407ae2c.js.map",
+    "static/js/2.0f83389a.chunk.js": "/Crypo-Tracker/static/js/2.0f83389a.chunk.js",
+    "static/js/2.0f83389a.chunk.js.map": "/Crypo-Tracker/static/js/2.0f83389a.chunk.js.map",
+    "index.html": "/Crypo-Tracker/index.html",
+    "static/js/2.0f83389a.chunk.js.LICENSE.txt": "/Crypo-Tracker/static/js/2.0f83389a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a9167df0.js",
-    "static/js/2.7307ff05.chunk.js",
-    "static/js/main.84e65bac.chunk.js"
+    "static/js/runtime-main.b407ae2c.js",
+    "static/js/2.0f83389a.chunk.js",
+    "static/js/main.e2af74f2.chunk.js"
   ]
 }
