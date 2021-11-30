@@ -27,8 +27,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-  font-family: 'Outfit', sans-serif;
-	line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1;
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor.main};
 }
