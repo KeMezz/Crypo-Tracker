@@ -4,7 +4,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-## 추후 추가될 예정인 기능
+## 예정
 
 - 검색
 - 무한 스크롤링
