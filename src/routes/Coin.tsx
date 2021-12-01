@@ -75,10 +75,11 @@ const OverviewBox = styled.ul`
   display: flex;
   width: 100%;
   text-align: center;
-  background-color: #111;
+  background-color: ${props => props.theme.box.boxBgColor};
   padding: 4px 0;
   border-radius: 16px;
   li {
+    color: ${props => props.theme.box.boxTextColor};
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -114,7 +115,7 @@ const OverviewPrice = styled.div`
   padding: 20px 0;
   margin-bottom: 16px;
   border-radius: 16px;
-  border: solid 5px #111;
+  border: solid 5px ${props => props.theme.box.boxBgColor};
   h5 {
     font-size: 12px;
     padding-bottom: 20px;

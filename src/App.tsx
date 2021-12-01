@@ -1,5 +1,7 @@
-import { createGlobalStyle } from "styled-components";
+import { useState } from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Router from "./Router";
+import { darkTheme, lightTheme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -31,6 +33,7 @@ body {
   line-height: 1;
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor.main};
+  overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -56,10 +59,14 @@ a {
 `;
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+  const toggleTheme = () => setIsDark((current) => !current);
   return (
     <>
-      <GlobalStyle />
-      <Router />
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Router toggleTheme={toggleTheme} />
+      </ThemeProvider>
     </>
   );
 }

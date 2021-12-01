@@ -9,8 +9,8 @@ const Container = styled.section`
 const PriceBox = styled.div`
   margin-top: 14px;
   border-radius: 16px;
-  background-color: ${(props) => props.theme.textColor.main};
-  color: #111;
+  background-color: ${(props) => props.theme.box.boxBgColor};
+  color: ${props => props.theme.box.boxTextColor};
   display: flex;
   padding: 26px;
   justify-content: space-between;

@@ -11,14 +11,34 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
-  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 `;
+
+const ThemeBtn = styled.button`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: ${props => props.theme.box.boxBgColor};
+  color: ${props => props.theme.box.boxTextColor};
+  cursor: pointer;
+  i {
+    font-size: 18px;
+  }
+`;
+
 
 const Title = styled.h1`
   margin-bottom: 30px;
   font-weight: 300;
   text-align: center;
-  font-size: 40px;
+  font-size: 38px;
   text-transform: uppercase;
   position: relative;
   color: ${(props) => props.theme.textColor.main};
@@ -50,8 +70,8 @@ const Coin = styled.li`
     justify-content: space-between;
     align-items: center;
     border-radius: 16px;
-    background-color: ${(props) => props.theme.textColor.main};
-    color: ${(props) => props.theme.bgColor};
+    background-color: ${(props) => props.theme.box.boxBgColor};
+    color: ${(props) => props.theme.box.boxTextColor};
     padding: 20px;
     transition: background-color 0.2s ease-in-out;
     .coin___info {
@@ -84,8 +104,14 @@ interface CoinsDataInterface {
   type: string;
 }
 
-function Coins() {
-  const { isLoading: loading, data: coinsData } = useQuery<CoinsDataInterface[]>("allCoins", fetchAllCoins);
+interface ICoinsProps {
+  toggleTheme: () => void;
+}
+
+function Coins({ toggleTheme }: ICoinsProps) {
+  const { isLoading: loading, data: coinsData } = useQuery<
+    CoinsDataInterface[]
+  >("allCoins", fetchAllCoins);
 
   return (
     <Container>
@@ -93,6 +119,9 @@ function Coins() {
         <title>CRYPTO TRACKER</title>
       </Helmet>
       <Header>
+        <ThemeBtn onClick={toggleTheme}>
+          <i className="xi-moon"></i>
+        </ThemeBtn>
         {loading ? (
           <Title>
             <b>now</b>loading...
@@ -117,7 +146,6 @@ function Coins() {
                 <img
                   className="coin___image"
                   src={`https://cryptoicon-api.vercel.app/api/icon/${item.symbol.toLowerCase()}`}
-                  // src="https://cryptoicon-api.vercel.app/api/icon/kcs"
                   alt={`${item.name}`}
                 />
                 <p className="coin___name">{item.name}</p>
