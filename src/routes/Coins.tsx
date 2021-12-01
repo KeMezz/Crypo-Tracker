@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fetchAllCoins } from "../api";
 import { Helmet } from "react-helmet";
+import { useSetRecoilState } from "recoil";
+import { isDarkAtom } from "../atoms";
 
 const Container = styled.div`
   max-width: 500px;
@@ -21,18 +23,17 @@ const Header = styled.header`
 `;
 
 const ThemeBtn = styled.button`
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: none;
-  background-color: ${props => props.theme.box.boxBgColor};
-  color: ${props => props.theme.box.boxTextColor};
+  background-color: ${(props) => props.theme.box.boxBgColor};
+  color: ${(props) => props.theme.box.boxTextColor};
   cursor: pointer;
   i {
     font-size: 18px;
   }
 `;
-
 
 const Title = styled.h1`
   margin-bottom: 30px;
@@ -104,11 +105,8 @@ interface CoinsDataInterface {
   type: string;
 }
 
-interface ICoinsProps {
-  toggleTheme: () => void;
-}
-
-function Coins({ toggleTheme }: ICoinsProps) {
+function Coins() {
+  const toggleDark = useSetRecoilState(isDarkAtom);
   const { isLoading: loading, data: coinsData } = useQuery<
     CoinsDataInterface[]
   >("allCoins", fetchAllCoins);
@@ -119,7 +117,7 @@ function Coins({ toggleTheme }: ICoinsProps) {
         <title>CRYPTO TRACKER</title>
       </Helmet>
       <Header>
-        <ThemeBtn onClick={toggleTheme}>
+        <ThemeBtn onClick={() => toggleDark((current) => !current)}>
           <i className="xi-moon"></i>
         </ThemeBtn>
         {loading ? (
