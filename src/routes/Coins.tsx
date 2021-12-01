@@ -23,16 +23,13 @@ const Header = styled.header`
 `;
 
 const ThemeBtn = styled.button`
-  width: 32px;
-  height: 32px;
+  padding: 8px;
   border-radius: 50%;
   border: none;
   background-color: ${(props) => props.theme.box.boxBgColor};
   color: ${(props) => props.theme.box.boxTextColor};
   cursor: pointer;
-  i {
-    font-size: 18px;
-  }
+  font-size: 22px;
 `;
 
 const Title = styled.h1`
@@ -117,9 +114,7 @@ function Coins() {
         <title>CRYPTO TRACKER</title>
       </Helmet>
       <Header>
-        <ThemeBtn onClick={() => toggleDark((current) => !current)}>
-          <i className="xi-moon"></i>
-        </ThemeBtn>
+        <ThemeBtn className="xi-moon" onClick={() => toggleDark((current) => !current)}></ThemeBtn>
         {loading ? (
           <Title>
             <b>now</b>loading...
