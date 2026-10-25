@@ -238,7 +238,7 @@ interface IPriceData {
 }
 
 function Coin() {
-  const { coinId } = useParams() as IParams;
+  const { coinId } = useParams<keyof IParams>() as IParams;
   const { state } = useLocation();
   const priceMatch = useMatch(":coinId/price");
   const chartMatch = useMatch(":coinId/chart");
